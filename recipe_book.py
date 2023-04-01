@@ -3,8 +3,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.behaviors import ButtonBehavior
-from kivy.graphics import Color, Rectangle
-from kivy.core.window import Window
+
 
 class MyKivyApp(App):
     def build(self):
