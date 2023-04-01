@@ -36,7 +36,7 @@ class MyKivyApp(App):
         # Создаем контейнер для вывода
         result_layout = BoxLayout(
             orientation='horizontal',
-            size_hint=(1, None),
+            size_hint=(1, 1),
             spacing=10,
             pos_hint={'center_x': 0.5})
 
@@ -50,13 +50,13 @@ class MyKivyApp(App):
         # Создаем контейнер для кнопок навигации
         nav_layout = BoxLayout(
             orientation='horizontal',
-            size_hint=(1, 0.01),
-            height=30,
+            size_hint=(1, None),
+            height=50,
             spacing=10,
             pos_hint={'center_x': 0.5, 'bottom': 1})
 
         # Создаем кнопки навигации
-        home_button = Button(text='Домой', size_hint=(0.3, 1))
+        home_button = Button(text='Главная', size_hint=(0.3, 1))
         fav_button = Button(text='Избранное', size_hint=(0.3, 1))
         profile_button = Button(text='Личный кабинет', size_hint=(0.4, 1))
 
