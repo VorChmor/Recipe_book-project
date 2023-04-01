@@ -2,7 +2,9 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
-
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.graphics import Color, Rectangle
+from kivy.core.window import Window
 
 class MyKivyApp(App):
     def build(self):
@@ -17,11 +19,12 @@ class MyKivyApp(App):
             spacing=10, 
             pos_hint={'center_x': 0.5, 'top': 1})
 
-        # Создаем поле для ввода текста
+ 
+      # Создаем поле для ввода текста
         text_input = TextInput(multiline=True)
 
         # Создаем кнопку
-        button = Button(text='Нажми меня', size_hint=(.4, 1))
+        button = ColoredButton(text='Нажми меня', size_hint=(.4, 1))
 
         # Добавляем поле ввода текста и кнопку в контейнер
         input_layout.add_widget(text_input)
@@ -56,9 +59,9 @@ class MyKivyApp(App):
             pos_hint={'center_x': 0.5, 'bottom': 1})
 
         # Создаем кнопки навигации
-        home_button = Button(text='Главная', size_hint=(0.3, 1))
-        fav_button = Button(text='Избранное', size_hint=(0.3, 1))
-        profile_button = Button(text='Личный кабинет', size_hint=(0.4, 1))
+        home_button = ColoredButton(text='Главная', size_hint=(0.3, 1))
+        fav_button = ColoredButton(text='Избранное', size_hint=(0.3, 1))
+        profile_button = ColoredButton(text='Личный кабинет', size_hint=(0.4, 1))
 
         # Добавляем кнопки навигации в контейнер
         nav_layout.add_widget(home_button)
@@ -69,6 +72,16 @@ class MyKivyApp(App):
         main_layout.add_widget(nav_layout)
 
         return main_layout
+    
+
+class ColoredButton(Button):
+    def __init__(self, **kwargs):
+        super(ColoredButton, self).__init__(**kwargs)
+        self.background_color = (0.76, 0.03, 0.25, 1)  
+    def on_press(self):
+        self.background_color = (0.44, 0.13, 0.20, 1)   
+
+
 
 
 if __name__ == '__main__':
