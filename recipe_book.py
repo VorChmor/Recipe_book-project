@@ -4,7 +4,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.behaviors import ButtonBehavior
 
-
+#kfkfkfkfkjfkfjkldlfjklgjkdjgkljkdlfjklfdjklf
 class MyKivyApp(App):
     def build(self):
         # Создаем главный контейнер, используя BoxLayout
